@@ -9,7 +9,7 @@ function WhoAirVault() {
                 <div className="mx-4 md:mx-15">
                     {/* heading */}
                     <div className="mt-24 mb-12">
-                        <h1 className="pt-24 pb-12 text-4xl md:text-5xl font-medium text-left md:text-center bg-gradient-to-r from-[#94959C] via-[#FFFFFF] to-[#93949B] text-transparent bg-clip-text">
+                        <h1 className="pt-24 -mr-2 sm:-mr-0 pb-12 text-4xl md:text-5xl font-medium text-left md:text-center bg-gradient-to-r from-[#94959C] via-[#FFFFFF] to-[#93949B] text-transparent bg-clip-text">
                             Who is AirVault for?
                         </h1>
                     </div>

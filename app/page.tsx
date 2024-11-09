@@ -20,11 +20,10 @@ export default function Home() {
                 <div className="absolute inset-x-0 mx-auto -mt-16 sm:-mt-16 md:-mt-16 lg:-mt-16 h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] md:h-[500px] md:w-[600px] lg:h-[600px] lg:w-[800px] rounded-full bg-[#FF7733] opacity-[0.05] blur-[120px] mix-blend-lighten"></div>
 
                 {/* Layer for shadow.svg (below the text) */}
-                <div className="relative z-0">
-                    <div className="absolute inset-0 w-full h-full bg-[url('/shadow.svg')] bg-cover bg-center opacity-75 mix-blend-overlay "></div>
+                <div className="relative">
+                    <div className="absolute inset-0 w-full h-full bg-[url('/shadow.svg')] bg-cover bg-center opacity-75 mix-blend-overlay z-0"></div>
 
-                    {/* The <WhoAirVault /> component */}
-                    <div className=" z-10 -mt-24">
+                    <div className=" relative z-10 -mt-24">
                         <WhoAirVault />
                     </div>
                 </div>
