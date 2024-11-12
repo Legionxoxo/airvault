@@ -13,11 +13,6 @@ export default function Home() {
                 <Hero />
 
                 {/* Main gradient circle - Responsive */}
-                <div className="absolute inset-x-0 mx-auto -mt-16 sm:-mt-16 md:-mt-16 lg:-mt-16 h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] md:h-[500px] md:w-[600px] lg:h-[600px] lg:w-[800px] rounded-full bg-[#FF7733] opacity-[0.15] blur-3xl mix-blend-lighten"></div>
-
-                {/* Layered blur circles for more gradient depth - Responsive */}
-                <div className="absolute inset-x-0 mx-auto -mt-16 sm:-mt-16 md:-mt-16 lg:-mt-16 h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] md:h-[500px] md:w-[600px] lg:h-[600px] lg:w-[800px] rounded-full bg-[#FF7733] opacity-[0.1] blur-[80px] mix-blend-lighten"></div>
-                <div className="absolute inset-x-0 mx-auto -mt-16 sm:-mt-16 md:-mt-16 lg:-mt-16 h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] md:h-[500px] md:w-[600px] lg:h-[600px] lg:w-[800px] rounded-full bg-[#FF7733] opacity-[0.05] blur-[120px] mix-blend-lighten"></div>
 
                 <div className="relative 2xl:h-screen">
                     <img

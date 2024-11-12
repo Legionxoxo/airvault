@@ -9,6 +9,11 @@ function Button() {
     // Function to handle the button press
     const handlePress = () => {
         setIsPressed(true);
+
+        // Reset the button state after 2 seconds
+        setTimeout(() => {
+            setIsPressed(false);
+        }, 1000);
     };
 
     return (
