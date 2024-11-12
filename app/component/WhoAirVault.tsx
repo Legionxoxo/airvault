@@ -5,8 +5,8 @@ import Button from "./ui/Button";
 function WhoAirVault() {
     return (
         <div className="w-full max-h-fit">
-            <div className="relative">
-                <div className="absolute inset-0 max-w-[1400px] mx-auto h-full z-0 overflow-hidden">
+            <div className="relative max-w-[1200px] mx-auto">
+                <div className="absolute inset-0 mx-auto h-full z-0 overflow-hidden">
                     <img
                         src="/shadow.png"
                         alt="Shadow"
@@ -25,7 +25,7 @@ function WhoAirVault() {
 
                         {/* Icons */}
                         <div className="2xl:mx-[210px]">
-                            <div className="grid grid-cols-1 gap-[60px] md:place-items-center 2xl:grid-cols-3 2xl:gap-[100px] 2xl:max-w-[1400px] 2xl:mx-auto">
+                            <div className="grid grid-cols-1 gap-[60px] md:place-items-center 2xl:grid-cols-3 2xl:gap-[100px] max-w-[1200px] mx-auto">
                                 {/* Point 1 */}
                                 <div className="md:mx-[262px] 2xl:mx-0">
                                     <div className="w-full">

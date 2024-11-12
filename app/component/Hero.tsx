@@ -9,15 +9,14 @@ function Hero() {
             <div
                 className="bg-cover bg-[url('/finalmobilelines.svg')] 
         md:bg-[url('/finalpadlines.svg')] 
-        2xl:bg-[url('/finaltvlines.svg')] 2xl:mx-auto max-w-[1440px] mx-auto"
+        2xl:bg-[url('/finaltvlines.svg')]  max-w-[1200px] mx-auto"
             >
-                {/* Logo with absolute positioning and margin-bottom */}
-                <div className="lg:absolute lg:left-4 lg:top-4 lg:pb-20 lg:mb-[82px] md:left-[80px] top-4 sm:top-6 md:top-8 z-10">
-                    <Logo />
-                </div>
-
                 <div className="mx-4 pt-4 md:pt-6 max-w-screen-lg lg:mx-auto">
-                    <div className="mt-10 md:mt-28 2xl:mt-40 flex items-center justify-center mb-7 md:mb-10">
+                    <div className="">
+                        <Logo />
+                    </div>
+
+                    <div className="mt-4 md:mt-28 2xl:mt-20 flex items-center justify-center mb-7 md:mb-10">
                         <Image
                             src="/pill.svg"
                             alt="logo"
