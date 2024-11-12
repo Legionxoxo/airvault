@@ -4,27 +4,15 @@ import WhoAirVault from "./component/WhoAirVault";
 export default function Home() {
     return (
         <main
-            className="h-full w-full bg-cover
-    bg-[url('/bgmobile.svg')]
-    md:bg-[url('/bgpad.svg')]
-    2xl:bg-[url('/bgtv.svg')]"
+            className="min-h-screen w-full bg-cover bg-no-repeat
+        bg-[url('/bgmobile.svg')]
+        md:bg-[url('/bgpad.svg')]
+        2xl:bg-[url('/bgtv.svg')]"
+            style={{ backgroundSize: "cover", backgroundPosition: "center" }}
         >
-            <div>
+            <div className="flex flex-col min-h-screen">
                 <Hero />
-
-                {/* Main gradient circle - Responsive */}
-
-                <div className="relative 2xl:h-screen">
-                    <img
-                        src="/shadow.png"
-                        alt="Shadow"
-                        className="absolute inset-0 w-full h-full object-cover opacity-75 mix-blend-overlay z-0"
-                    />
-
-                    <div className="relative z-10 -mt-24 2xl:-mt-[100px]">
-                        <WhoAirVault />
-                    </div>
-                </div>
+                <WhoAirVault />
             </div>
         </main>
     );

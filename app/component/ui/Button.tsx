@@ -13,7 +13,7 @@ function Button() {
         // Reset the button state after 2 seconds
         setTimeout(() => {
             setIsPressed(false);
-        }, 1000);
+        }, 200);
     };
 
     return (
