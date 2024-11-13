@@ -1,7 +1,4 @@
-"use client";
-
 import React, { useState } from "react";
-
 import { useRouter } from "next/navigation";
 
 interface SignupStep2Props {
@@ -47,12 +44,20 @@ const SignupStep2: React.FC<SignupStep2Props> = ({ onContinue }) => {
 
         // Call the onContinue function passed as a prop
         onContinue(data);
-        router.push("/dashboard/userdashboard"); //userDashboard
+        router.push("/dashboard/userdashboard"); // userDashboard
     };
 
     const togglePasswordVisibility = () => setPasswordVisible(!passwordVisible);
     const toggleConfirmPasswordVisibility = () =>
         setConfirmPasswordVisible(!confirmPasswordVisible);
+
+    const handleInputChange =
+        (setter: React.Dispatch<React.SetStateAction<string>>) =>
+        (e: React.ChangeEvent<HTMLInputElement>) => {
+            setter(e.target.value);
+            setError("");
+            setEmailError("");
+        };
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
@@ -80,15 +85,9 @@ const SignupStep2: React.FC<SignupStep2Props> = ({ onContinue }) => {
                         id="email"
                         name="email"
                         placeholder="Email"
-                        className={`w-full p-3 border-2 border-solid rounded-lg focus:outline-none text-gray-400 placeholder-gray-400 ${
-                            email ? "border-[#298DFF]" : "border-gray-300"
-                        }`} // Border color changes when user types
+                        className="w-full p-3 border-2 border-solid rounded-lg focus:outline-none focus:border-[#298DFF] text-[#A3A09F] placeholder-[#A3A09F] border-gray-300"
                         value={email}
-                        onChange={(e) => {
-                            setEmail(e.target.value);
-                            setEmailError(""); // Clear email error on change
-                            setError("");
-                        }}
+                        onChange={handleInputChange(setEmail)}
                         required
                     />
                     {emailError && (
@@ -112,16 +111,9 @@ const SignupStep2: React.FC<SignupStep2Props> = ({ onContinue }) => {
                             id="password"
                             name="password"
                             placeholder="Password"
-                            className={`w-full p-3 pr-10 border-2 border-solid rounded-lg focus:outline-none text-gray-400 placeholder-gray-400 ${
-                                password
-                                    ? "border-[#298DFF]"
-                                    : "border-gray-300"
-                            }`}
+                            className="w-full p-3 pr-10 border-2 border-solid rounded-lg focus:outline-none focus:border-[#298DFF] text-[#A3A09F] placeholder-[#A3A09F] border-gray-300"
                             value={password}
-                            onChange={(e) => {
-                                setPassword(e.target.value);
-                                setError("");
-                            }}
+                            onChange={handleInputChange(setPassword)}
                             required
                         />
                         <button
@@ -142,7 +134,8 @@ const SignupStep2: React.FC<SignupStep2Props> = ({ onContinue }) => {
                         </button>
                     </div>
                 </div>
-                {/* confirm password */}
+
+                {/* Confirm Password Field */}
                 <div className="mb-6 relative">
                     <label
                         htmlFor="confirmPassword"
@@ -156,16 +149,9 @@ const SignupStep2: React.FC<SignupStep2Props> = ({ onContinue }) => {
                             id="confirmPassword"
                             name="confirmPassword"
                             placeholder="Confirm password"
-                            className={`w-full p-3 pr-10 border-2 border-solid rounded-lg focus:outline-none text-gray-400 placeholder-gray-400 ${
-                                confirmPassword
-                                    ? "border-[#298DFF]"
-                                    : "border-gray-300"
-                            }`} // Border color changes when user types
+                            className="w-full p-3 pr-10 border-2 border-solid rounded-lg focus:outline-none focus:border-[#298DFF] text-[#A3A09F] placeholder-[#A3A09F] border-gray-300"
                             value={confirmPassword}
-                            onChange={(e) => {
-                                setConfirmPassword(e.target.value);
-                                setError("");
-                            }}
+                            onChange={handleInputChange(setConfirmPassword)}
                             required
                         />
                         <button

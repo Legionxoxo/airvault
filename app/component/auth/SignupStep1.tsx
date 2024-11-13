@@ -40,6 +40,13 @@ const SignupStep1: React.FC<SignupStep1Props> = ({ onContinue }) => {
         router.push("/signup/step2");
     };
 
+    const handleInputChange =
+        (setter: React.Dispatch<React.SetStateAction<string>>) =>
+        (e: React.ChangeEvent<HTMLInputElement>) => {
+            setter(e.target.value);
+            setError("");
+        };
+
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100">
             <form
@@ -65,14 +72,9 @@ const SignupStep1: React.FC<SignupStep1Props> = ({ onContinue }) => {
                         id="username"
                         name="username"
                         placeholder="Username"
-                        className={`w-full p-3 border rounded-lg focus:outline-none ${
-                            error ? "border-red-500" : "border-gray-300"
-                        }`}
+                        className="w-full p-3 border-2 border-solid rounded-lg focus:outline-none focus:border-[#298DFF] text-[#A3A09F] placeholder-[#A3A09F] border-gray-300"
                         value={username}
-                        onChange={(e) => {
-                            setUsername(e.target.value);
-                            setError("");
-                        }}
+                        onChange={handleInputChange(setUsername)}
                         required
                     />
                     {error && (
@@ -89,18 +91,18 @@ const SignupStep1: React.FC<SignupStep1Props> = ({ onContinue }) => {
                             type="text"
                             name="firstName"
                             placeholder="First name"
-                            className="w-1/2 p-3 border border-gray-300 rounded-lg focus:outline-none"
+                            className="w-1/2 p-3 border-2 border-solid rounded-lg focus:outline-none focus:border-[#298DFF] text-[#A3A09F] placeholder-[#A3A09F] border-gray-300"
                             value={firstName}
-                            onChange={(e) => setFirstName(e.target.value)}
+                            onChange={handleInputChange(setFirstName)}
                             required
                         />
                         <input
                             type="text"
                             name="lastName"
                             placeholder="Last name"
-                            className="w-1/2 p-3 border border-gray-300 rounded-lg focus:outline-none"
+                            className="w-1/2 p-3 border-2 border-solid rounded-lg focus:outline-none focus:border-[#298DFF] text-[#A3A09F]  placeholder-[#A3A09F] border-[#A3A09F] "
                             value={lastName}
-                            onChange={(e) => setLastName(e.target.value)}
+                            onChange={handleInputChange(setLastName)}
                             required
                         />
                     </div>
