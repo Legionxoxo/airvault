@@ -72,7 +72,7 @@ const SignupStep1: React.FC<SignupStep1Props> = ({ onContinue }) => {
                         id="username"
                         name="username"
                         placeholder="Username"
-                        className="w-full p-3 border-2 border-solid rounded-lg focus:outline-none focus:border-[#298DFF] text-[#A3A09F] placeholder-[#A3A09F] border-gray-300"
+                        className="w-full p-3 border-2 border-solid rounded-lg focus:outline-none focus:border-[#298DFF] text-[#44475B] placeholder-[#A3A09F] border-gray-300"
                         value={username}
                         onChange={handleInputChange(setUsername)}
                         required
@@ -91,7 +91,7 @@ const SignupStep1: React.FC<SignupStep1Props> = ({ onContinue }) => {
                             type="text"
                             name="firstName"
                             placeholder="First name"
-                            className="w-1/2 p-3 border-2 border-solid rounded-lg focus:outline-none focus:border-[#298DFF] text-[#A3A09F] placeholder-[#A3A09F] border-gray-300"
+                            className="w-1/2 p-3 border-2 border-solid rounded-lg focus:outline-none focus:border-[#298DFF] text-[#44475B] placeholder-[#A3A09F] border-gray-300"
                             value={firstName}
                             onChange={handleInputChange(setFirstName)}
                             required
@@ -100,7 +100,7 @@ const SignupStep1: React.FC<SignupStep1Props> = ({ onContinue }) => {
                             type="text"
                             name="lastName"
                             placeholder="Last name"
-                            className="w-1/2 p-3 border-2 border-solid rounded-lg focus:outline-none focus:border-[#298DFF] text-[#A3A09F]  placeholder-[#A3A09F] border-[#A3A09F] "
+                            className="w-1/2 p-3 border-2 border-solid rounded-lg focus:outline-none focus:border-[#298DFF] text-[#44475B]  placeholder-[#A3A09F]  border-gray-300"
                             value={lastName}
                             onChange={handleInputChange(setLastName)}
                             required

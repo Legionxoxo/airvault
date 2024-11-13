@@ -85,7 +85,7 @@ const SignupStep2: React.FC<SignupStep2Props> = ({ onContinue }) => {
                         id="email"
                         name="email"
                         placeholder="Email"
-                        className="w-full p-3 border-2 border-solid rounded-lg focus:outline-none focus:border-[#298DFF] text-[#A3A09F] placeholder-[#A3A09F] border-gray-300"
+                        className="w-full p-3 border-2 border-solid rounded-lg focus:outline-none focus:border-[#298DFF] text-[#44475B][#A3A09F] placeholder-[#A3A09F] border-gray-300"
                         value={email}
                         onChange={handleInputChange(setEmail)}
                         required
@@ -111,7 +111,7 @@ const SignupStep2: React.FC<SignupStep2Props> = ({ onContinue }) => {
                             id="password"
                             name="password"
                             placeholder="Password"
-                            className="w-full p-3 pr-10 border-2 border-solid rounded-lg focus:outline-none focus:border-[#298DFF] text-[#A3A09F] placeholder-[#A3A09F] border-gray-300"
+                            className="w-full p-3 pr-10 border-2 border-solid rounded-lg focus:outline-none focus:border-[#298DFF] text-[#44475B] placeholder-[#A3A09F] border-gray-300"
                             value={password}
                             onChange={handleInputChange(setPassword)}
                             required
@@ -149,7 +149,7 @@ const SignupStep2: React.FC<SignupStep2Props> = ({ onContinue }) => {
                             id="confirmPassword"
                             name="confirmPassword"
                             placeholder="Confirm password"
-                            className="w-full p-3 pr-10 border-2 border-solid rounded-lg focus:outline-none focus:border-[#298DFF] text-[#A3A09F] placeholder-[#A3A09F] border-gray-300"
+                            className="w-full p-3 pr-10 border-2 border-solid rounded-lg focus:outline-none focus:border-[#298DFF] text-[#44475B] placeholder-[#A3A09F] border-gray-300"
                             value={confirmPassword}
                             onChange={handleInputChange(setConfirmPassword)}
                             required

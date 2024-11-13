@@ -5,7 +5,7 @@ import Button from "./ui/Button";
 function WhoAirVault() {
     return (
         <div className="w-full max-h-fit">
-            <div className="relative max-w-[1200px] mx-auto">
+            <div className="relative max-w-[1300px] mx-auto">
                 <div className="absolute inset-0 mx-auto h-full z-0 overflow-hidden">
                     <img
                         src="/shadow.png"

@@ -72,7 +72,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
                         id="email"
                         name="email"
                         placeholder="Email"
-                        className="w-full p-3 border-2 border-solid rounded-lg focus:outline-none focus:border-[#298DFF] text-[#A3A09F]  placeholder-[#A3A09F] gray-400 border-gray-300"
+                        className="w-full p-3 border-2 border-solid rounded-lg focus:outline-none focus:border-[#298DFF] text-[#44475B]  placeholder-[#A3A09F] gray-400 border-gray-300"
                         value={email}
                         onChange={handleInputChange(setEmail, setEmailError)}
                         required
@@ -98,7 +98,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
                             id="password"
                             name="password"
                             placeholder="Password"
-                            className="w-full p-3 pr-10 border-2 border-solid rounded-lg focus:outline-none focus:border-[#298DFF] text-[#A3A09F]  placeholder-[#A3A09F]  border-gray-300"
+                            className="w-full p-3 pr-10 border-2 border-solid rounded-lg focus:outline-none focus:border-[#298DFF] text-[#44475B]  placeholder-[#A3A09F]  border-gray-300"
                             value={password}
                             onChange={handleInputChange(setPassword, setError)}
                             required
