@@ -22,24 +22,26 @@ function Hero() {
     return (
         <div className="w-full max-h-fit relative">
             {/* Lottie Animation */}
-            <div className=" flex justify-center">
-                <div className="absolute">
-                    <dotlottie-player
-                        src="https://lottie.host/fae072c8-88f0-46d6-8387-0c3e06982e05/ybo5X6q1ZV.json"
-                        background="transparent"
-                        speed="1"
-                        style={{ width: "100%", height: "100%" }}
-                        loop
-                        autoplay
-                    ></dotlottie-player>
-                </div>
+            <div className="absolute inset-0">
+                <dotlottie-player
+                    src="https://lottie.host/fae072c8-88f0-46d6-8387-0c3e06982e05/ybo5X6q1ZV.json"
+                    background="transparent"
+                    speed="1"
+                    style={{ width: "100%", height: "100%" }}
+                    loop
+                    autoplay
+                ></dotlottie-player>
             </div>
-            <div className="max-w-[1200px] mx-auto">
+
+            {/* Foreground Content */}
+            <div className="relative max-w-[1200px] mx-auto">
                 <div className="mx-4 pt-4 md:pt-6 max-w-screen-lg lg:mx-auto">
+                    {/* Logo */}
                     <div>
                         <Logo />
                     </div>
 
+                    {/* Image */}
                     <div className="mt-4 md:mt-28 2xl:mt-20 flex items-center justify-center mb-7 md:mb-10">
                         <Image
                             src="/pill.svg"
@@ -65,7 +67,7 @@ function Hero() {
                         <Button />
                     </div>
 
-                    {/* Overlay effects */}
+                    {/* Overlay Effects */}
                     <div className="absolute inset-x-0 mx-auto -mt-16 sm:-mt-16 md:-mt-16 lg:-mt-16 h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] md:h-[500px] md:w-[600px] lg:h-[600px] lg:w-[800px] rounded-full bg-[#FF7733] opacity-[0.15] blur-[100px] mix-blend-lighten"></div>
                     <div className="absolute inset-x-0 mx-auto -mt-16 sm:-mt-16 md:-mt-16 lg:-mt-16 h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] md:h-[500px] md:w-[600px] lg:h-[600px] lg:w-[800px] rounded-full bg-[#FF7733] opacity-[0.1] blur-[150px] mix-blend-lighten"></div>
                     <div className="absolute inset-x-0 mx-auto -mt-16 sm:-mt-16 md:-mt-16 lg:-mt-16 h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] md:h-[500px] md:w-[600px] lg:h-[600px] lg:w-[800px] rounded-full bg-[#FF7733] opacity-[0.05] blur-[200px] mix-blend-lighten"></div>
