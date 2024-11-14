@@ -1,38 +1,15 @@
-"use client";
-import { useEffect } from "react";
 import Image from "next/image";
 import Button from "./ui/Button";
 import Logo from "./ui/Logo";
+import Lottie from "./ui/Lottie";
 
 function Hero() {
-    useEffect(() => {
-        // Dynamically load the DotLottie player script if needed
-        const script = document.createElement("script");
-        script.src =
-            "https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs";
-        script.type = "module";
-        script.async = true;
-        document.body.appendChild(script);
-
-        return () => {
-            document.body.removeChild(script);
-        };
-    }, []);
-
     return (
         <div className="w-full max-h-fit relative">
             {/* Lottie Animation */}
             <div className="absolute inset-0">
-                <dotlottie-player
-                    src="https://lottie.host/fae072c8-88f0-46d6-8387-0c3e06982e05/ybo5X6q1ZV.json"
-                    background="transparent"
-                    speed="1"
-                    style={{ width: "100%", height: "100%" }}
-                    loop
-                    autoplay
-                ></dotlottie-player>
+                <Lottie />
             </div>
-
             {/* Foreground Content */}
             <div className="relative max-w-[1200px] mx-auto">
                 <div className="mx-4 pt-4 md:pt-6 max-w-screen-lg lg:mx-auto">

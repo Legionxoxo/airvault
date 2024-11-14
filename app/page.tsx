@@ -5,16 +5,13 @@ export default function Home() {
     return (
         <main
             className="min-h-screen w-full bg-cover bg-no-repeat
-        bg-[url('/bgmobile.svg')]
-        md:bg-[url('/bgpad.svg')]
-        2xl:bg-[url('/bgtv.svg')]"
+                        bg-[url('/bgmobile.svg')]
+                        md:bg-[url('/bgpad.svg')]
+                        2xl:bg-[url('/bgtv.svg')]"
             style={{ backgroundSize: "cover", backgroundPosition: "center" }}
         >
-            <div className="flex flex-col min-h-screen">
-                <Hero />
-
-                <WhoAirVault />
-            </div>
+            <Hero />
+            <WhoAirVault />
         </main>
     );
 }
