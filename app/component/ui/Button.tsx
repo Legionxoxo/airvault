@@ -23,7 +23,7 @@ function Button() {
                 disabled={isPressed}
                 className={`
                     w-full 
-                    md:w-[165px]
+                    md:w-[175px]
                     py-2 
                     px-4 
                     text-white 

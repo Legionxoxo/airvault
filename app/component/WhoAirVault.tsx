@@ -14,7 +14,7 @@ function WhoAirVault() {
                     />
                 </div>
 
-                <div className="relative z-10 pb-20 -mt-24 2xl:-mt-[120px]">
+                <div className="relative z-10 pb-20 -mt-24 2xl:-mt-[100px]">
                     <div className="mx-4 md:mx-15">
                         {/* Heading */}
                         <div className="mt-24 mb-12">
