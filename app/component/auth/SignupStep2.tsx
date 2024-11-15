@@ -44,7 +44,7 @@ const SignupStep2: React.FC<SignupStep2Props> = ({ onContinue }) => {
 
         // Call the onContinue function passed as a prop
         onContinue(data);
-        router.push("/dashboard/userdashboard"); // userDashboard
+        router.push("/userDashboard"); // userDashboard
     };
 
     const togglePasswordVisibility = () => setPasswordVisible(!passwordVisible);

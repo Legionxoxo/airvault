@@ -2,30 +2,26 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 
 const menuItems = [
-    { name: "Dashboard", path: "/dashboard/userdashboard", icon: "/grid.svg" },
+    { name: "Dashboard", path: "/userDashboard", icon: "/grid.svg" },
     {
         name: "Accounts",
-        path: "/dashboard/accounts",
+        path: "/accounts",
         icon: "/user.svg",
         submenu: [
-            { name: "Users", path: "/dashboard/accounts/users" },
-            { name: "Groups", path: "/dashboard/accounts/groups" },
+            { name: "Users", path: "/accounts/users" },
+            { name: "Groups", path: "/accounts/groups" },
         ],
     },
-    { name: "Directory", path: "/dashboard/directory", icon: "/database.svg" },
-    {
-        name: "Network Shares",
-        path: "/dashboard/network-shares",
-        icon: "/share.svg",
-    },
-    { name: "Protection", path: "/dashboard/protection", icon: "/shield.svg" },
+    { name: "Directory", path: "/directory", icon: "/database.svg" },
+    { name: "Network Shares", path: "/networkShares", icon: "/share.svg" },
+    { name: "Protection", path: "/protection", icon: "/shield.svg" },
     {
         name: "Version Update",
-        path: "/dashboard/version-update",
+        path: "/versionUpdate",
         icon: "/arrow-up-circle.svg",
     },
 ];
@@ -39,6 +35,22 @@ export default function DashboardLayout({
 }) {
     const pathname = usePathname();
     const [accountsOpen, setAccountsOpen] = useState(false);
+    const [showLogoutModal, setShowLogoutModal] = useState(false);
+    const router = useRouter();
+
+    const handleLogoutClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+        setShowLogoutModal(true);
+    };
+
+    const handleConfirmLogout = () => {
+        setShowLogoutModal(false);
+        router.push("/login"); // Redirect to logout path
+    };
+
+    const handleCloseModal = () => {
+        setShowLogoutModal(false);
+    };
 
     return (
         <div className="flex min-h-screen bg-gray-100">
@@ -70,7 +82,7 @@ export default function DashboardLayout({
                                     }}
                                     className={`flex items-center p-2 my-1 rounded transition-colors ${
                                         pathname === item.path
-                                            ? "bg-blue-100 text-blue-700"
+                                            ? "bg-[#DBEAFE] text-gray-800"
                                             : "hover:bg-gray-200"
                                     }`}
                                 >
@@ -102,7 +114,7 @@ export default function DashboardLayout({
                                                 href={subItem.path}
                                                 className={`block p-2 my-1 rounded ${
                                                     pathname === subItem.path
-                                                        ? "bg-blue-100 text-blue-700"
+                                                        ? "bg-[#DBEAFE] text-gray-800"
                                                         : "hover:bg-gray-200"
                                                 }`}
                                             >
@@ -116,11 +128,11 @@ export default function DashboardLayout({
                     </nav>
                 </div>
                 <nav>
-                    <Link
-                        href={logoutItem.path}
+                    <button
+                        onClick={handleLogoutClick}
                         className={`flex items-center p-2 my-1 rounded transition-colors ${
                             pathname === logoutItem.path
-                                ? "bg-blue-100 text-blue-700"
+                                ? "bg-[#DBEAFE] text-gray-800"
                                 : "hover:bg-gray-200"
                         }`}
                     >
@@ -132,10 +144,35 @@ export default function DashboardLayout({
                             className="mr-3"
                         />
                         <span>{logoutItem.name}</span>
-                    </Link>
+                    </button>
                 </nav>
             </aside>
-            <main className="flex-1 p-8">{children}</main>
+
+            {showLogoutModal && (
+                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+                    <div className="bg-white p-10 shadow-lg text-center w-[414px] h-[209px] rounded-lg flex flex-col items-center justify-between">
+                        <h2 className="text-3xl font-medium mb-6 text-gray-800">
+                            Logout?
+                        </h2>
+                        <div className="flex justify-between w-full space-x-3">
+                            <button
+                                onClick={handleCloseModal}
+                                className="w-[161px] h-[48px] py-3 text-base bg-white border-[#E1E3F5] border-2 rounded-md hover:bg-gray-400 text-[#737790] transition-colors"
+                            >
+                                Cancel
+                            </button>
+                            <button
+                                onClick={handleConfirmLogout}
+                                className="w-[161px] h-[48px] py-3 text-base bg-[#298DFF] text-white rounded-md hover:bg-blue-600 transition-colors"
+                            >
+                                Yes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            <main className="flex-1 p-20">{children}</main>
         </div>
     );
 }

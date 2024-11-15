@@ -135,7 +135,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
                 {/* forget password */}
                 <div className="mt-4 text-center">
                     <a
-                        href="/signup" // This will take the user to the signup page
+                        href="/login/forgetPassword" // This will take the user to the forget password
                         className="text-[#298DFF] hover:text-blue-700"
                     >
                         Forgot password?
