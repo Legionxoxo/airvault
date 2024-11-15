@@ -97,8 +97,10 @@ const NewPassword: React.FC<PasswordProps> = ({ onPasswordReset }) => {
                                             ? "/passwordeyeclose.svg"
                                             : "/passwordeyeopen.svg"
                                     }
+                                    height={6}
+                                    width={6}
                                     alt="Toggle Password Visibility"
-                                    className="w-6 h-6"
+                                   
                                 />
                             </button>
                         </div>
