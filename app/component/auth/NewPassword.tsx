@@ -15,7 +15,6 @@ const NewPassword: React.FC<PasswordProps> = ({ onPasswordReset }) => {
     const [passwordVisible, setPasswordVisible] = useState(false);
     const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
     const [error, setError] = useState("");
-    const [emailError, setEmailError] = useState("");
     const router = useRouter();
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -47,7 +46,6 @@ const NewPassword: React.FC<PasswordProps> = ({ onPasswordReset }) => {
         (e: React.ChangeEvent<HTMLInputElement>) => {
             setter(e.target.value);
             setError("");
-            setEmailError("");
         };
 
     return (
@@ -93,7 +91,7 @@ const NewPassword: React.FC<PasswordProps> = ({ onPasswordReset }) => {
                                 aria-label="Toggle Password Visibility"
                                 tabIndex={-1}
                             >
-                                <img
+                                <Image
                                     src={
                                         passwordVisible
                                             ? "/passwordeyeclose.svg"
@@ -134,14 +132,15 @@ const NewPassword: React.FC<PasswordProps> = ({ onPasswordReset }) => {
                                 aria-label="Toggle Confirm Password Visibility"
                                 tabIndex={-1}
                             >
-                                <img
+                                <Image
                                     src={
                                         confirmPasswordVisible
                                             ? "/passwordeyeclose.svg"
                                             : "/passwordeyeopen.svg"
                                     }
                                     alt="Toggle Confirm Password Visibility"
-                                    className="w-6 h-6"
+                                    height={6}
+                                    width={6}
                                 />
                             </button>
                         </div>

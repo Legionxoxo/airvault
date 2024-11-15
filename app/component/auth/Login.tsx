@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 interface LoginProps {
     onLogin: (data: { email: string; password: string }) => void;
@@ -53,7 +54,13 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
         <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
             <form onSubmit={handleSubmit} className="w-full max-w-md">
                 <div className="text-center mb-6">
-                    <img src="/logo.svg" alt="Logo" className="mx-auto mb-4" />
+                    <Image
+                        src="/logo.svg"
+                        alt="Logo"
+                        height={50}
+                        width={50}
+                        className="mx-auto mb-4"
+                    />
                     <h1 className="text-3xl font-semibold text-gray-800">
                         Login
                     </h1>
@@ -109,14 +116,15 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
                             className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
                             aria-label="Toggle Password Visibility"
                         >
-                            <img
+                            <Image
                                 src={
                                     passwordVisible
                                         ? "/passwordeyeclose.svg"
                                         : "/passwordeyeopen.svg"
                                 }
                                 alt="Toggle Password Visibility"
-                                className="w-6 h-6"
+                                height={6}
+                                width={6}
                             />
                         </button>
                     </div>

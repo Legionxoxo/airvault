@@ -9,7 +9,6 @@ interface CheckProps {
 
 const CheckEmail: React.FC<CheckProps> = ({ onCheck }) => {
     const [email, setEmail] = useState("");
-    const [error, setError] = useState("");
     const [emailError, setEmailError] = useState("");
     const router = useRouter();
 
@@ -43,7 +42,6 @@ const CheckEmail: React.FC<CheckProps> = ({ onCheck }) => {
         (e: React.ChangeEvent<HTMLInputElement>) => {
             setter(e.target.value);
             errorSetter("");
-            setError("");
         };
 
     return (

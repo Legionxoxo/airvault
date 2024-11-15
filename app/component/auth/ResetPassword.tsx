@@ -9,7 +9,7 @@ interface ResetProps {
 
 const ResetPassword: React.FC<ResetProps> = ({ onReset }) => {
     const [email, setEmail] = useState("");
-    const [error, setError] = useState("");
+
     const [emailError, setEmailError] = useState("");
     const router = useRouter();
 
@@ -43,7 +43,6 @@ const ResetPassword: React.FC<ResetProps> = ({ onReset }) => {
         (e: React.ChangeEvent<HTMLInputElement>) => {
             setter(e.target.value);
             errorSetter("");
-            setError("");
         };
 
     return (
